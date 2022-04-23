@@ -15,7 +15,7 @@ framework:
                         name: order.fanout
                         type: fanout
                     queues:
-                        order1.fanout:
+                        order2.fanout:
 
         routing:
         # Route your messages to the transports
