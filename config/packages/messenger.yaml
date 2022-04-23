@@ -8,7 +8,15 @@ framework:
             # async: '%env(MESSENGER_TRANSPORT_DSN)%'
             # failed: 'doctrine://default?queue_name=failed'
             # sync: 'sync://'
+            fanout:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                options:
+                    exchange:
+                        name: order.fanout
+                        type: fanout
+                    queues:
+                        order1.fanout:
 
         routing:
-            # Route your messages to the transports
-            # 'App\Message\YourMessage': async
+        # Route your messages to the transports
+        # 'App\Message\YourMessage': async
